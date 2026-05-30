@@ -1,0 +1,1 @@
+root.configure(bg="#1e1e1e")
