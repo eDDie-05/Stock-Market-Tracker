@@ -1,43 +1,40 @@
-# Stock Tracker
-A small Python project with a Tkinter stock tracker UI, a chart helper, and a dark-mode Tkinter demo.
+# Stock Market Tracker — Python
 
-## Prerequisites
-- Python 3.10+ (tested with Python 3.12)
-- `pip` and `venv`
+A desktop stock-lookup application built with Tkinter and yfinance. The main window accepts a ticker symbol and displays the latest available daily closing price, high and low returned by the data provider.
+
+## Features
+- Tkinter desktop interface
+- Ticker-symbol lookup
+- Daily price, high and low display
+- Separate chart and portfolio-related helper modules in the repository
+
+## Requirements
+- Python 3.10 or newer
+- Tkinter
+- yfinance
+- Matplotlib (for chart-related functionality)
 
 ## Setup
-From the project directory:
-
 ```bash
-python3 -m venv .venv
+python -m venv .venv
+# macOS / Linux
 source .venv/bin/activate
-python -m pip install --upgrade pip
+# Windows PowerShell
+.venv\\Scripts\\Activate.ps1
 python -m pip install yfinance matplotlib
 ```
 
-If you are not using a virtual environment on Ubuntu/Debian, you may need:
-
-```bash
-python -m pip install --user --break-system-packages yfinance matplotlib
-```
-
-## Run the app
-Launch the main stock tracker UI:
-
+## Run the main application
 ```bash
 python main.py
 ```
 
-## Use the chart helper
-`chart.py` exposes a function `show_chart(ticker)`:
+## Main files
+- `main.py` — desktop ticker lookup
+- `chart.py` — chart helper
+- `database.py`, `portfolio.py`, `watchlist.py`, `export_portfolio.py`, `news_feed.py`, `crypto_tracking.py`, `refresh.py` — supporting modules
 
-```bash
-python -c "from chart import show_chart; show_chart('AAPL')"
-```
-
-## Dark mode demo
-Run the dark-mode Tkinter demo script:
-
-```bash
-python .venv/dark_mode.py
-```
+## Important notes
+- Market data is supplied by an external provider and may be delayed, incomplete or unavailable.
+- This is an educational information tool, not financial advice or a trading platform.
+- Do not commit virtual environments, personal database files or API credentials. Review the existing `.venv` and database files before keeping the repository public.
